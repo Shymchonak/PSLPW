@@ -12,7 +12,7 @@ const config = defineConfig({
 
   use: {
     trace: 'retain-on-failure',
-    headless: false,
+    headless: true,
     storageState: './e2etests/state.json',
     baseURL: 'https://staging.pasalo.pro'
     // video: 'retain-on-failure'

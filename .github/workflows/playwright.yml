@@ -1,5 +1,5 @@
 name: Playwright Tests
-on: [workflow_dispatch, push]  # Ручной запуск + при пуше
+on: [workflow_dispatch, push]
 
 jobs:
   test:
@@ -16,7 +16,17 @@ jobs:
       - name: Install browsers
         run: npx playwright install --with-deps
 
-      - name: Run tests (headless in CI)
-        run: npx playwright test --workers=4
-        env:
-          CI: "true" 
+      - name: Run tests
+        run: |
+          npx playwright test --workers=4
+          # Принудительно сохраняем артефакты
+          mkdir -p test-results/artifacts
+          cp -r test-results/* test-results/artifacts/ || true
+
+      - uses: actions/upload-artifacts@v3
+        if: always()
+        with:
+          name: playwright-report
+          path: |
+            test-results/artifacts/
+            playwright-report/
