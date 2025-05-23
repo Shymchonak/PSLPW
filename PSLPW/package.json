@@ -1,0 +1,24 @@
+{
+  "name": "pslpw",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test",
+    "test wr": "npx playwright test --reporter=null",
+    "test login": "npx playwright test login.spec.ts",
+    "test communityDetails": "npx playwright test communityDetails.spec.ts",
+    "test taskstatuses": "npx playwright test communityTaskStatuses.spec.ts",
+    "test types": "npx playwright test communityTaskTypes.spec.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.52.0",
+    "@types/node": "^22.15.18",
+    "globals": "^16.1.0",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.32.1"
+  },
+  "description": ""
+}
