@@ -1,5 +1,6 @@
-name: Playwright Tests Main
-on: [workflow_dispatch]
+name: Playwright Tests
+on: [workflow_dispatch, push]  # Ручной запуск + при пуше
+
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -8,5 +9,14 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - run: npm ci
-      - run: npx playwright test --workers 4 --headless
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install browsers
+        run: npx playwright install --with-deps
+
+      - name: Run tests (headless in CI)
+        run: npx playwright test --workers=4
+        env:
+          CI: "true" 
