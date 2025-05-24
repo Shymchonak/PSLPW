@@ -34,11 +34,13 @@ test.describe.serial('Task types test', () => {
     })
 
     test('Task type without subtype edit', async() => {
+        await  communityDetails.successCommunityDetailsNotifications(communityDetailsConst.TASK_TYPE_CREATED).waitFor({state: 'hidden'})
         await communityDetails.editTaskType(taskTypesConst.TYPE_WITHOUT_SUBTYPE_NAME, taskTypesConst.TYPE_WITHOUT_SUBTYPE_NAME_EDITED);
         await (expect (communityDetails.successCommunityDetailsNotifications(communityDetailsConst.TASK_TYPE_UPDATE)).toBeVisible())
     })
 
     test('Task type with subtype without timer creation', async() => {
+        await  communityDetails.successCommunityDetailsNotifications(communityDetailsConst.TASK_TYPE_UPDATE).waitFor({state: 'hidden'})
         await communityDetails.createTaskTypeWithoutSubtype(taskTypesConst.TYPE_WITH_SUBTYPE_WITHOUT_TIMER_NAME, taskTypesConst.ICON_ID_BUG_LINE);
         await communityDetails.createSubtypeWithoutTimer(taskTypesConst.TYPE_WITH_SUBTYPE_WITHOUT_TIMER_NAME, taskTypesConst.SUBTYPE_WITHOUT_TIMER)
         await (expect (communityDetails.successCommunityDetailsNotifications(communityDetailsConst.SUBTYPE_CREATED)).toBeVisible())
@@ -50,6 +52,7 @@ test.describe.serial('Task types test', () => {
     })
 
     test('Subtype with timer creation', async() => {
+        await  communityDetails.successCommunityDetailsNotifications(communityDetailsConst.SUBTYPE_CREATED).waitFor({state: 'hidden'})
         await communityDetails.createTaskTypeWithoutSubtype(taskTypesConst.TYPE_WITH_SUBTYPE_WITH_TIMER_NAME, taskTypesConst.ICON_ID_BUG_TWO_LINE);
         await communityDetails.createSubtypeWithTimer(taskTypesConst.TYPE_WITH_SUBTYPE_WITH_TIMER_NAME, taskTypesConst.SUBTYPE_WITH_TIMER, taskTypesConst.TIME_PERIOD_HOURS, taskTypesConst.TIME_AMOUNT_VALUE)
         await (expect (communityDetails.successCommunityDetailsNotifications(communityDetailsConst.SUBTYPE_CREATED)).toBeVisible())

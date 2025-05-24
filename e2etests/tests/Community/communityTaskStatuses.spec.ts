@@ -29,59 +29,56 @@ test.describe.serial('Community Task Statuses', ()=> {
         await communitiesList.getCommunityInTheList(customTaskStatusesConst.COMMUNITY_TASK_STATUS_TEST).click()
         await communityDetails.createCustomTaskStatus(customTaskStatusesConst.CUSTOM_TASK_STATUS_PENDING_NAME,customTaskStatusesConst.PARENT_STATUS_PENDING, customTaskStatusesConst.COLOR_FOR_PARENT_PENDING);
         await (expect (communityDetails.successCommunityDetailsNotifications(communityDetailsConst.STATUS_CREATED)).toBeVisible())
-        await  communityDetails.successCommunityDetailsNotifications(communityDetailsConst.STATUS_CREATED).click()
+
     })
 
     test('Create custom INPROGRESS task status', async () => {
+        await  communityDetails.successCommunityDetailsNotifications(communityDetailsConst.STATUS_CREATED).waitFor({state: 'hidden'})
         await communitiesList.getCommunityInTheList(customTaskStatusesConst.COMMUNITY_TASK_STATUS_TEST).click()
         await communityDetails.createCustomTaskStatus(customTaskStatusesConst.CUSTOM_TASK_STATUS_INPROGRESS_NAME,customTaskStatusesConst.PARENT_STATUS_INPROGRESS, customTaskStatusesConst.COLOR_FOR_PARENT_INPROGRESS);
         await (expect (communityDetails.successCommunityDetailsNotifications(communityDetailsConst.STATUS_CREATED)).toBeVisible())
-        await  communityDetails.successCommunityDetailsNotifications(communityDetailsConst.STATUS_CREATED).click()
+
     })
     test('Create custom COMPLETED task status', async () => {
-
+        await  communityDetails.successCommunityDetailsNotifications(communityDetailsConst.STATUS_CREATED).waitFor({state: 'hidden'})
         await communitiesList.getCommunityInTheList(customTaskStatusesConst.COMMUNITY_TASK_STATUS_TEST).click()
         await communityDetails.createCustomTaskStatus(customTaskStatusesConst.CUSTOM_TASK_STATUS_COMPLETED_NAME,customTaskStatusesConst.PARENT_STATUS_COMPLETED, customTaskStatusesConst.COLOR_FOR_PARENT_COMPLETED);
         await (expect (communityDetails.successCommunityDetailsNotifications(communityDetailsConst.STATUS_CREATED)).toBeVisible())
-
     })
 
     test('Edit custom PENDING task status', async () => {
+        await  communityDetails.successCommunityDetailsNotifications(communityDetailsConst.STATUS_CREATED).waitFor({state: 'hidden'})
         await communityDetails.editTaskStatus(customTaskStatusesConst.CUSTOM_TASK_STATUS_PENDING_NAME, customTaskStatusesConst.CUSTOM_TASK_STATUS_PENDING_NAME_EDITED)
         await (expect (communityDetails.successCommunityDetailsNotifications(communityDetailsConst.STATUS_UPDATED)).toBeVisible())
-        await  communityDetails.successCommunityDetailsNotifications(communityDetailsConst.STATUS_UPDATED).click()
-        await page.waitForTimeout(500)
     })
 
     test('Edit custom INPROGRESS task status', async () => {
+        await  communityDetails.successCommunityDetailsNotifications(communityDetailsConst.STATUS_UPDATED).waitFor({state: 'hidden'})
         await communityDetails.editTaskStatus(customTaskStatusesConst.CUSTOM_TASK_STATUS_INPROGRESS_NAME, customTaskStatusesConst.CUSTOM_TASK_STATUS_INPROGRESS_NAME_EDITED)
         await (expect (communityDetails.successCommunityDetailsNotifications(communityDetailsConst.STATUS_UPDATED)).toBeVisible())
-        await  communityDetails.successCommunityDetailsNotifications(communityDetailsConst.STATUS_UPDATED).click()
-        await page.waitForTimeout(500)
     })
 
     test('Edit custom COMPLETED task status', async () => {
+        await  communityDetails.successCommunityDetailsNotifications(communityDetailsConst.STATUS_UPDATED).waitFor({state: 'hidden'})
         await communityDetails.editTaskStatus(customTaskStatusesConst.CUSTOM_TASK_STATUS_COMPLETED_NAME, customTaskStatusesConst.CUSTOM_TASK_STATUS_COMPLETED_NAME_EDITED)
         await (expect (communityDetails.successCommunityDetailsNotifications(communityDetailsConst.STATUS_UPDATED)).toBeVisible())
-        await  communityDetails.successCommunityDetailsNotifications(communityDetailsConst.STATUS_UPDATED).click()
     })
 
     test('Delete custom PENDING task status', async () => {
+        await  communityDetails.successCommunityDetailsNotifications(communityDetailsConst.STATUS_UPDATED).waitFor({state: 'hidden'})
         await communityDetails.deleteTaskStatus(customTaskStatusesConst.CUSTOM_TASK_STATUS_PENDING_NAME_EDITED)
         await (expect (communityDetails.successCommunityDetailsNotifications(communityDetailsConst.STATUS_DELETED)).toBeVisible())
-        await  communityDetails.successCommunityDetailsNotifications(communityDetailsConst.STATUS_DELETED).click()
-        await page.waitForTimeout(500)
-
     })
 
     test('Delete custom INPROGRESS task status', async () => {
+        await  communityDetails.successCommunityDetailsNotifications(communityDetailsConst.STATUS_DELETED).waitFor({state: 'hidden'})
         await communityDetails.deleteTaskStatus(customTaskStatusesConst.CUSTOM_TASK_STATUS_INPROGRESS_NAME_EDITED)
         await (expect (communityDetails.successCommunityDetailsNotifications(communityDetailsConst.STATUS_DELETED)).toBeVisible())
-        await  communityDetails.successCommunityDetailsNotifications(communityDetailsConst.STATUS_DELETED).click()
-        await page.waitForTimeout(500)
+
     })
 
     test('Delete custom COMPLETED task status', async () => {
+        await  communityDetails.successCommunityDetailsNotifications(communityDetailsConst.STATUS_DELETED).waitFor({state: 'hidden'})
         await communityDetails.deleteTaskStatus(customTaskStatusesConst.CUSTOM_TASK_STATUS_COMPLETED_NAME_EDITED)
         await (expect (communityDetails.deleteTaskStatusButton(customTaskStatusesConst.CUSTOM_TASK_STATUS_COMPLETED_NAME_EDITED)).not.toBeVisible())
     })

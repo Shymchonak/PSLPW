@@ -29,18 +29,18 @@ test.describe.serial('Communities test', () => {
         await communityDetails.navigate('/admin-dashboard')
         await communityDetails.createNewCommunity(communityDetailsConst.COMMUNITY_DETAILS_NAME);
         await expect (await communitiesList.getCommunityInTheList(communityDetailsConst.COMMUNITY_DETAILS_NAME)).toBeVisible()
-        await  communityDetails.successCommunityDetailsNotifications(communityDetailsConst.COMMUNITY_CREATED).click()
+
 
     })
 
     test('Edit community name', async () => {
+        await  communityDetails.successCommunityDetailsNotifications(communityDetailsConst.COMMUNITY_CREATED).waitFor({state: 'hidden'})
         await communityDetails.editCommunityName();
         await expect (await communityDetails.successCommunityDetailsNotifications(communityDetailsConst.COMMUNITY_UPDATE)).toBeVisible()
-        await  communityDetails.successCommunityDetailsNotifications(communityDetailsConst.COMMUNITY_UPDATE).click()
-        await page.waitForTimeout(1000)
     })
 
     test('Edit community description', async () => {
+        await communityDetails.successCommunityDetailsNotifications(communityDetailsConst.COMMUNITY_UPDATE).waitFor({state: 'hidden'})
         await communityDetails.editCommunityDescription();
         await expect (await communityDetails.successCommunityDetailsNotifications(communityDetailsConst.COMMUNITY_UPDATE)).toBeVisible()
     })
