@@ -34,11 +34,13 @@ test.describe.serial('Communities test', () => {
     test('Edit community name', async () => {
         await communityDetails.editCommunityName();
         await expect (await communityDetails.successCommunityDetailsNotifications(communityDetailsConst.COMMUNITY_UPDATE)).toBeVisible()
+        if (await communityDetails.successCommunityDetailsNotifications(communityDetailsConst.COMMUNITY_UPDATE).isVisible()){
+            await  communityDetails.successCommunityDetailsNotifications(communityDetailsConst.COMMUNITY_UPDATE).click()
+        }
     })
 
     test('Edit community description', async () => {
         await communityDetails.editCommunityDescription();
-
         await expect (await communityDetails.successCommunityDetailsNotifications(communityDetailsConst.COMMUNITY_UPDATE)).toBeVisible()
     })
 
