@@ -29,22 +29,20 @@ test.describe.serial('Communities test', () => {
         await communityDetails.navigate('/admin-dashboard')
         await communityDetails.createNewCommunity(communityDetailsConst.COMMUNITY_DETAILS_NAME);
         await expect (await communitiesList.getCommunityInTheList(communityDetailsConst.COMMUNITY_DETAILS_NAME)).toBeVisible()
-        if (await communityDetails.successCommunityDetailsNotifications(communityDetailsConst.COMMUNITY_CREATED).isVisible()){
-            await  communityDetails.successCommunityDetailsNotifications(communityDetailsConst.COMMUNITY_CREATED).click()
-        }
+        await  communityDetails.successCommunityDetailsNotifications(communityDetailsConst.COMMUNITY_CREATED).click()
+
     })
 
     test('Edit community name', async () => {
         await communityDetails.editCommunityName();
         await expect (await communityDetails.successCommunityDetailsNotifications(communityDetailsConst.COMMUNITY_UPDATE)).toBeVisible()
-        if (await communityDetails.successCommunityDetailsNotifications(communityDetailsConst.COMMUNITY_UPDATE).isVisible()){
-            await  communityDetails.successCommunityDetailsNotifications(communityDetailsConst.COMMUNITY_UPDATE).click()
-        }
+        await  communityDetails.successCommunityDetailsNotifications(communityDetailsConst.COMMUNITY_UPDATE).click()
     })
 
     test('Edit community description', async () => {
         await communityDetails.editCommunityDescription();
         await expect (await communityDetails.successCommunityDetailsNotifications(communityDetailsConst.COMMUNITY_UPDATE)).toBeVisible()
+        await  communityDetails.successCommunityDetailsNotifications(communityDetailsConst.COMMUNITY_UPDATE).click()
     })
 
 
