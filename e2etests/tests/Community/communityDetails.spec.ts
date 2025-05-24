@@ -29,8 +29,8 @@ test.describe.serial('Communities test', () => {
         await communityDetails.navigate('/admin-dashboard')
         await communityDetails.createNewCommunity(communityDetailsConst.COMMUNITY_DETAILS_NAME);
         await expect (await communitiesList.getCommunityInTheList(communityDetailsConst.COMMUNITY_DETAILS_NAME)).toBeVisible()
-        if (await communityDetails.successCommunityDetailsNotifications(communityDetailsConst.COMMUNITY_DETAILS_NAME).isVisible()){
-            await  communityDetails.successCommunityDetailsNotifications(communityDetailsConst.COMMUNITY_DETAILS_NAME).click()
+        if (await communityDetails.successCommunityDetailsNotifications(communityDetailsConst.COMMUNITY_CREATED).isVisible()){
+            await  communityDetails.successCommunityDetailsNotifications(communityDetailsConst.COMMUNITY_CREATED).click()
         }
     })
 
@@ -43,9 +43,6 @@ test.describe.serial('Communities test', () => {
     })
 
     test('Edit community description', async () => {
-        if (await communityDetails.successCommunityDetailsNotifications(communityDetailsConst.COMMUNITY_UPDATE).isVisible()){
-            await  communityDetails.successCommunityDetailsNotifications(communityDetailsConst.COMMUNITY_UPDATE).click()
-        }
         await communityDetails.editCommunityDescription();
         await expect (await communityDetails.successCommunityDetailsNotifications(communityDetailsConst.COMMUNITY_UPDATE)).toBeVisible()
     })

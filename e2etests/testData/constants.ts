@@ -26,6 +26,7 @@ export class CommunityDetails {
     UPDATED_COMMUNITY_DETAILS_NAME = 'Community details test UPD'
     NEW_COMMUNITY_DESCRIPTION = 'Some words for new community'
     COMMUNITY_DESCRIPTON_EDITED = 'Totaly new text UPD'
+    COMMUNITY_CREATED = "Community created!"
     COMMUNITY_UPDATE = "Community updated!"
     STATUS_CREATED = "Status created!"
     STATUS_UPDATED = "Status updated!"
