@@ -1,7 +1,7 @@
-import { test, expect, Page, Locator} from "@playwright/test";
+import { test, expect, Page} from "@playwright/test";
 import { CommunitiesList } from "../../pageObjects/components/communitiesList";
-import {CommunityDetails, Urls, CustomTaskStatuses} from "../../testData/constants";
-import { CommunityDetailsPage } from "../../pageObjects/communityDetailsPage";
+import {CommunityDetails, Urls} from "../../testData/constants";
+import { CommunityDetailsPage } from "../../pageObjects/Communities/communityDetailsPage";
 
 
 test.describe.serial('Communities test', () => {

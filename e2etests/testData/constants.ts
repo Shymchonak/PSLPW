@@ -84,3 +84,27 @@ export class TaskTypes {
 
 }
 
+export class CommunityMembers {
+    MEMBERS_COMMUNITY_NAME = "Community members"
+    MEMBER_SECTION = "Member"
+    MEMBER_ROLE = "New member role"
+    MEMBER_ROLE_UPDATED = "New member role UPDATED"
+    MEMBER_ROLE_SECOND = "Member role SECOND"
+    INVALID_MEMBER_NAME = "sdfsfsdf"
+    INVALID_SEARCH_RESULT = "Members are resources that help on the execution of tasks inside a community."
+    INVITE_FROM_THE_LIST_MEMBER_SEARCH = "Member from list"
+    INVITE_FROM_THE_LIST_MEMBER_FIRST_NAME = "Member"
+    INVITE_FROM_THE_LIST_MEMBER_FIRST_NAME_UPDATE = "Member UPDATE"
+
+    INVITE_BY_EMAIL = "shymnakjob+1002@gmail.com"
+    INVITE_BY_EMAIL_FIRST_NAME = "By email"
+    INVITE_BY_EMAIL_LAST_NAME = "Member"
+
+}
+
+export class RolePermissions {
+    VIEW_TASKS = "Can view tasks"
+    DELETE_TASK = "Can delete tasks"
+    POST_TASK = "Can post tasks"
+    UPDATE_TASK = "Can update tasks"
+}

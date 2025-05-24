@@ -1,6 +1,6 @@
 import { test, Page, expect } from "@playwright/test";
 import {CommunityDetails, CustomTaskStatuses, Urls} from "../../testData/constants";
-import { CommunityDetailsPage } from "../../pageObjects/communityDetailsPage";
+import { CommunityDetailsPage } from "../../pageObjects/Communities/communityDetailsPage";
 import {CommunitiesList} from "../../pageObjects/components/communitiesList";
 
 test.describe.serial('Community Task Statuses', ()=> {

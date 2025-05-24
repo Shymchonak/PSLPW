@@ -1,5 +1,5 @@
 import { test, expect, Page} from "@playwright/test";
-import { CommunityDetailsPage } from '../../pageObjects/communityDetailsPage'
+import { CommunityDetailsPage } from '../../pageObjects/Communities/communityDetailsPage'
 import { CommunitiesList} from "../../pageObjects/components/communitiesList";
 import { CommunityDetails, Urls, TaskTypes} from "../../testData/constants";
 

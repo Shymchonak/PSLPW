@@ -1,8 +1,8 @@
 import {Page, Locator} from "@playwright/test";
-import { Base } from "./basePage";
-import { CommunitiesList} from "./components/communitiesList";
-import { LeftSideMenu } from "../pageObjects/components/leftSideMenu";
-import { CommunityDetails, TaskTypes } from "../testData/constants";
+import { Base } from "../basePage";
+import { CommunitiesList} from "../components/communitiesList";
+import { LeftSideMenu } from "../components/leftSideMenu";
+import { CommunityDetails, TaskTypes } from "../../testData/constants";
 
 let communitiesList: CommunitiesList
 let leftSideMenu: LeftSideMenu
