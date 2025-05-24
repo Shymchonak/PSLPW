@@ -29,6 +29,9 @@ test.describe.serial('Communities test', () => {
         await communityDetails.navigate('/admin-dashboard')
         await communityDetails.createNewCommunity(communityDetailsConst.COMMUNITY_DETAILS_NAME);
         await expect (await communitiesList.getCommunityInTheList(communityDetailsConst.COMMUNITY_DETAILS_NAME)).toBeVisible()
+        if (await communityDetails.successCommunityDetailsNotifications(communityDetailsConst.COMMUNITY_DETAILS_NAME).isVisible()){
+            await  communityDetails.successCommunityDetailsNotifications(communityDetailsConst.COMMUNITY_DETAILS_NAME).click()
+        }
     })
 
     test('Edit community name', async () => {
