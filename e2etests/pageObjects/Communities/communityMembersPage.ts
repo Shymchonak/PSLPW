@@ -1,13 +1,8 @@
 import {Page, Locator} from "@playwright/test";
 import { Base } from "../basePage";
-import { CommunitiesList} from "../components/communitiesList";
-import { LeftSideMenu } from "../components/leftSideMenu";
-import {CommunityDetails, RolePermissions, TaskTypes} from "../../testData/constants";
+import { RolePermissions} from "../../testData/constants";
 
-let communitiesList: CommunitiesList
-let leftSideMenu: LeftSideMenu
-let communityDetailsConst: CommunityDetails
-let taskTypesConst: TaskTypes
+
 let rolePermissonConsts: RolePermissions
 
 
@@ -15,10 +10,7 @@ export class CommunityMembersPage extends Base {
 
     constructor(page: Page) {
         super(page);
-        leftSideMenu = new LeftSideMenu(page);
-        communityDetailsConst = new CommunityDetails();
-        communitiesList = new CommunitiesList(page);
-        taskTypesConst = new TaskTypes()
+
         rolePermissonConsts = new RolePermissions()
     }
 

@@ -109,3 +109,14 @@ export class RolePermissions {
     POST_TASK = "Can post tasks"
     UPDATE_TASK = "Can update tasks"
 }
+
+export class SupportMembers {
+    SUPPORT_COMMUNITY_NAME = "Support members"
+    SUPPORT_SECTION = "Support teams"
+    SUPPORT_TEAM_FIRST = "Support team first"
+    SUPPORT_TEAM_FIRST_EDITED = "Support team first UPDATED"
+    SUPPORT_TEAM_SECOND = "Support team second"
+    COLOR_FOR_FIRST_TEAM = "rgb(0, 69, 67)"
+    COLOR_FOR_FIRST_TEAM_UPDATE = "rgb(117, 0, 178)"
+    COLOR_FOR_SECOND_TEAM = "rgb(176, 196, 222)"
+}
