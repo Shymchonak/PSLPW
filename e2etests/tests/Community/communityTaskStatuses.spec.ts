@@ -50,13 +50,14 @@ test.describe.serial('Community Task Statuses', ()=> {
         await communityDetails.editTaskStatus(customTaskStatusesConst.CUSTOM_TASK_STATUS_PENDING_NAME, customTaskStatusesConst.CUSTOM_TASK_STATUS_PENDING_NAME_EDITED)
         await (expect (communityDetails.successCommunityDetailsNotifications(communityDetailsConst.STATUS_UPDATED)).toBeVisible())
         await  communityDetails.successCommunityDetailsNotifications(communityDetailsConst.STATUS_UPDATED).click()
-
+        await page.waitForTimeout(500)
     })
 
     test('Edit custom INPROGRESS task status', async () => {
         await communityDetails.editTaskStatus(customTaskStatusesConst.CUSTOM_TASK_STATUS_INPROGRESS_NAME, customTaskStatusesConst.CUSTOM_TASK_STATUS_INPROGRESS_NAME_EDITED)
         await (expect (communityDetails.successCommunityDetailsNotifications(communityDetailsConst.STATUS_UPDATED)).toBeVisible())
         await  communityDetails.successCommunityDetailsNotifications(communityDetailsConst.STATUS_UPDATED).click()
+        await page.waitForTimeout(500)
     })
 
     test('Edit custom COMPLETED task status', async () => {
@@ -69,6 +70,7 @@ test.describe.serial('Community Task Statuses', ()=> {
         await communityDetails.deleteTaskStatus(customTaskStatusesConst.CUSTOM_TASK_STATUS_PENDING_NAME_EDITED)
         await (expect (communityDetails.successCommunityDetailsNotifications(communityDetailsConst.STATUS_DELETED)).toBeVisible())
         await  communityDetails.successCommunityDetailsNotifications(communityDetailsConst.STATUS_DELETED).click()
+        await page.waitForTimeout(500)
 
     })
 
@@ -76,6 +78,7 @@ test.describe.serial('Community Task Statuses', ()=> {
         await communityDetails.deleteTaskStatus(customTaskStatusesConst.CUSTOM_TASK_STATUS_INPROGRESS_NAME_EDITED)
         await (expect (communityDetails.successCommunityDetailsNotifications(communityDetailsConst.STATUS_DELETED)).toBeVisible())
         await  communityDetails.successCommunityDetailsNotifications(communityDetailsConst.STATUS_DELETED).click()
+        await page.waitForTimeout(500)
     })
 
     test('Delete custom COMPLETED task status', async () => {

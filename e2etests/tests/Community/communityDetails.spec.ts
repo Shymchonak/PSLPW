@@ -37,6 +37,7 @@ test.describe.serial('Communities test', () => {
         await communityDetails.editCommunityName();
         await expect (await communityDetails.successCommunityDetailsNotifications(communityDetailsConst.COMMUNITY_UPDATE)).toBeVisible()
         await  communityDetails.successCommunityDetailsNotifications(communityDetailsConst.COMMUNITY_UPDATE).click()
+        await page.waitForTimeout(500)
     })
 
     test('Edit community description', async () => {
